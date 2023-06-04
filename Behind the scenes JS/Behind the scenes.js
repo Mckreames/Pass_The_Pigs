@@ -35,7 +35,7 @@ calcAge(1991);
 // console.log(age);
 // printAge();
 */
-
+/*
 console.log(me);
 // console.log(job);
 // console.log(year);
@@ -72,3 +72,56 @@ function deleteShoppingCart() {
 var x = 1;
 let y = 2;
 const z = 3;
+
+console.log(this);
+const calcAge = function(birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAge(1991);
+
+console.log(this);
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1980);
+
+const will = {
+  year: 1999,
+  calcAge: function() {
+    console.log(this);
+    console.log(2037 - this.year);
+  }
+}
+Will.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+matilda.calcAge = will.calcAge;
+matilda.calcAge();
+
+const f = will.calcAge;
+f();
+*/
+
+// var firstName = `Matilda`;
+
+const will = {
+  firstName: `Will`,
+  year: 1999,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const isMillenial = function () {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`)
+};
+will.greet();
+will.calcAge();
