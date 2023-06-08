@@ -107,21 +107,93 @@ f();
 */
 
 // var firstName = `Matilda`;
-
+/*
 const will = {
   firstName: `Will`,
   year: 1999,
   calcAge: function () {
-    console.log(this);
     console.log(2037 - this.year);
+*/
+    // solution 1
+    //   const self = this; //self or that
+    //   const isMillenial = function () {
+    //     console.log(self)
+    //     console.log(self.year >= 1981 && self.year <= 1996);
+    //     // console.log(this.year >= 1981 && this.year <= 1996);
+    //   };
+    //   isMillenial();
+    // },
 
-    const isMillenial = function () {
-      console.log(this.year >= 1981 && this.year <= 1996);
+    // Solution 2
+    //     const self = this; //self or that
+    //     const isMillenial = () => {
+    //       console.log(this)
+    //       console.log(this.year >= 1981 && this.year <= 1996);
+    //     isMillenial();
+    //   },
+
+    //   greet: () => {
+    //     console.log(this);
+    //     console.log(`Hey ${this.firstName}`);
+    //   },
+    // };
+    // will.greet();
+    // will.calcAge();
+
+    //     const addExpr = function (a, b) {
+    //       console.log(arguments);
+    //       return a + b;
+    //     };
+    //     addExpr(2, 5);
+    //     addExpr(2, 5, 8, 12);
+
+    //     var addArrow = (a, b) => {
+    //       console.llog(arguments);
+    //       return a + b;
+    //     };
+    //     addArrow(2, 5, 8);
+    //   },
+    // };
+/*
+    let age = 30;
+    let oldAge = age;
+    age = 31;
+    console.log(age);
+    console.log(oldAge);
+
+    const me = {
+      name: `Will`,
+      age: 24,
     };
-    isMillenial();
+    const friend = me;
+    friend.age = 27;
+    console.log(`Friends:`, friend);
+    console.log('Me', me);
   },
-
-  greet: () => console.log(`Hey ${this.firstName}`)
 };
-will.greet();
-will.calcAge();
+*/
+/*
+// Primitive Types
+let lastName = `Dukes`;
+let oldLastName = lastName;
+lastName = `Butler`;
+
+// Reference Types
+const daejah = {
+  firstName: `DaeJah`,
+  lastName: `Dukes`,
+  age: 21,
+};
+const marriedDaeJah = daejah;
+marriedDaeJah.lastName = `Butler`;
+
+// Copying objects
+const daejah2 = {
+  firstName: `DaeJah`,
+  lastName: `Dukes`,
+  age: 21,
+};
+
+const daejahCopy = Object.assign({}, daejah2);
+daejahCopy.lastName = `Butler`;
+*/
