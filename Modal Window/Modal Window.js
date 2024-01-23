@@ -16,10 +16,10 @@ const closeModal = function () {
   overlay.classList.add(`hidden`);
 };
 
-for (let i = 0; i < btnsOpenModal.length; i++) {
-  btnsOpenModal[i].addEventListener(`click`, openModal);
-  // modal.style.display = `block`;
-}
+// for (let i = 0; i < btnsOpenModal.length; i++) {
+//   btnsOpenModal[i].addEventListener(`click`, openModal);
+//   // modal.style.display = `block`;
+// }
 
 btnClosedModal.addEventListener(`click`, closeModal);
 overlay.addEventListener(`click`, closeModal);
@@ -28,6 +28,6 @@ document.addEventListener(`keydown`, function (e) {
   console.log(e.key);
 
   if (e.key === `Escape` && !modal.classList.contains(`hidden`)) {
-        closeModal();
-    }
-  });
+    closeModal();
+  }
+});
